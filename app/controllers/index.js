@@ -4,8 +4,10 @@
 
 import homeCtrl from './home_ctrl'
 import mainCtrl from './main_ctrl'
+import candidatesCtrl from './candidates/candidates_ctrl'
 
 export default appModule => {
   homeCtrl(appModule);
   mainCtrl(appModule);
+  candidatesCtrl(appModule);
 }

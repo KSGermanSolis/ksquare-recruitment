@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="libs/angular-material/angular-material.min.css">
+  <script src="libs/jquery/jquery.min.js"></script>
   <title>Ksquare Recruitment</title>
 </head>
 <body ng-app="app" layout="column" ng-controller="MainCtrl as ctrl">
-  <md-toolbar>
-    <h1>Ksquare Recruitment</h1>
+  <md-toolbar layout="row">
+    <div flex style="padding:0 20px;">
+      <h1 class="md-headline">Ksquare Recruitment</h1>
+    </div>
+    <div flex layout="row" layout-align="end center">
+      <md-button md-no-ink class="md-primary"
+                 ng-click="ctrl.logout()"
+                 ng-show="ctrl.isUserLoggedIn">Logout</md-button>
+    </div>
   </md-toolbar>
-  <div class="container" layout="row" flex ng-view>
-  </div>
+  <md-tabs md-border-bottom ng-show="ctrl.isUserLoggedIn">
+    <md-tab label="Dashboard" go-to-path="/"></md-tab>
+    <md-tab label="Candidates" go-to-path="/candidates"></md-tab>
+    <md-tab label="Recruiters" go-to-path="/recruiters"></md-tab>
+  </md-tabs>
+  <div class="container" layout="row" flex ng-view></div>
 
   <script src="bundle.js"></script>
 </body>

@@ -1,12 +1,19 @@
-<md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp" ng-show="ctrl.isUserLoggedIn">
-    <md-list>
-        <md-list-item>
-            <md-button>
-                Recruiter 1
-            </md-button>
-        </md-list-item>
-    </md-list>
-</md-sidenav>
-<md-content id="content" flex>
-    <h2>Recruiter 1</h2>
-</md-content>
+<div class="candidates-view" layout="row">
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp" ng-show="ctrl.isUserLoggedIn">
+        <div layout="row" layout-align="space-between center" class="md-padding">
+            <input type="text" placeholder="Search"  flex="65" class="search-candidate-input">
+            <md-button ng-click="vm.login()" flex="15" class="add-candidate-btn">Add</md-button>
+        </div>
+        <md-divider></md-divider>
+        <md-list>
+            <md-list-item>
+                <md-button>
+                    Recruiter 1
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <md-content id="content" flex>
+
+    </md-content>
+</div>

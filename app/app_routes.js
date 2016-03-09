@@ -13,6 +13,16 @@ export default appModule => {
     .when('/login', {
       templateUrl: 'views/login/login.html',
       allowAnonymous: true
+    })
+    .when('/candidates', {
+      templateUrl: 'views/candidates/candidates.html',
+      controller: 'CandidatesCtrl',
+      controllerAs: 'ctrl',
+      allowAnonymous: false
+    })
+    .when('/recruiters', {
+      templateUrl: 'views/recruiters/recruiters.html',
+      allowAnonymous: false
     });
 
     $locationProvider.html5Mode({
