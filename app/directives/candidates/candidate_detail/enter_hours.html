@@ -1,0 +1,99 @@
+<md-bottom-sheet layout="column">
+    <md-subheader>
+        Enter Hours for <b>{{vm.user.firstName+' '+vm.user.lastName}}</b>
+    </md-subheader>
+    <md-divider></md-divider>
+    <div layout="row" style="padding:20px 0;">
+        <div flex="85">
+            <table class="candidate-hours-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Jan</th>
+                        <th>Feb</th>
+                        <th>Mar</th>
+                        <th>Apr</th>
+                        <th>May</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Aug</th>
+                        <th>Sep</th>
+                        <th>Oct</th>
+                        <th>Nov</th>
+                        <th>Dec</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            2015
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.jan">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.feb">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.mar">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.apr">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.may">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.jun">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.jul">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.aug">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.sep">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.oct">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.nov">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container>
+                                <input ng-model="vm.dec">
+                            </md-input-container>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div flex>
+            <md-button class="md-raised md-primary" ng-click="vm.saveHours()">Save Hours</md-button>
+        </div>
+    </div>
+</md-bottom-sheet>

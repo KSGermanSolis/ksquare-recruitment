@@ -8,7 +8,7 @@ export default appModule => {
     let store = $window.localStorage;
 
     function login(credentials){
-      return $http.post(BaseUrl + '/api/login', credentials).then(function(response){
+      return $http.post(BaseUrl + '/api/login', credentials).then((response) => {
         return response.data;
       });
     }
@@ -25,17 +25,10 @@ export default appModule => {
       return JSON.parse(store.getItem(key));
     }
 
-    function getRecruiters(){
-      return $http.get(BaseUrl + '/api/recruiters').then(function(response){
-        return response.data;
-      });
-    }
-
     return {
       login,
       setUser,
-      getUser,
-      getRecruiters
+      getUser
     }
   }])
 }

@@ -3,7 +3,7 @@
  */
 
 export default appModule => {
-  appModule.factory('BaseUrl', function(){
+  appModule.factory('BaseUrl', () => {
     return 'http://localhost:9001';
   })
 }

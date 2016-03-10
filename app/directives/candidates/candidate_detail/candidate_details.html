@@ -1,17 +1,20 @@
-<div class="candidate-details-component" layout="column">
+<div id="candidate_content" class="candidate-details-component" layout="column">
     <div layout="row" layout-align="space-between center" class="md-padding">
         <h3>{{vm.candidate.firstName + ' ' + vm.candidate.lastName}}</h3>
         <div>
+            <md-button class="md-raised md-primary enter-hours-btn" ng-click="vm.showEnterHours()">Enter Hours</md-button>
             <md-button class="md-raised md-primary" ng-click="vm.edit()">Edit</md-button>
             <md-button class="md-raised md-warn" ng-click="vm.delete()">Delete</md-button>
         </div>
     </div>
     <md-divider></md-divider>
     <div class="display-fields">
+        <!--<display-model model="{{vm.candidate}}"></display-model>-->
         <display-field key="Name" value="{{vm.candidate.firstName+' '+vm.candidate.lastName}}"></display-field>
         <display-field key="Phone Number" value="{{vm.candidate.phoneNumber}}"></display-field>
         <display-field key="Email" value="{{vm.candidate.email}}"></display-field>
         <display-field key="Client" value="{{vm.candidate.client}}"></display-field>
+        <display-field key="Title" value="{{vm.candidate.title}}"></display-field>
         <display-field key="Bill Rate" value="{{vm.candidate.billRate}}"></display-field>
         <display-field key="Pay Rate" value="{{vm.candidate.payRate}}"></display-field>
         <display-field key="Start Date" value="{{vm.candidate.startDate.getFormattedString()}}"></display-field>

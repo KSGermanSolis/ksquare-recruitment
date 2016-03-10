@@ -3,8 +3,8 @@
  */
 
 export default appModule => {
-  appModule.directive('goToPath', ['$location', function($location){
-    return function(scope, element, attrs){
+  appModule.directive('goToPath', ['$location', ($location) => {
+    return (scope, element, attrs) => {
       element.on('click', function(e){
         e.stopPropagation();
         if(element.get(0).tagName === 'A') e.preventDefault();

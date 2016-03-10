@@ -3,10 +3,11 @@
  */
 
 import template from './candidate_details.html'
+import enterHoursTpl from './enter_hours.html'
 import style from './candidate_details.less'
 
 export default appModule => {
-  appModule.directive('candidateDetails', ['$compile', '$mdDialog', 'Candidate', ($compile, $mdDialog, Candidate) => {
+  appModule.directive('candidateDetails', ['$compile', '$mdDialog', '$mdBottomSheet', 'Candidate', ($compile, $mdDialog, $mdBottomSheet, Candidate) => {
     const link = function(scope, element){
       scope.render = function(){
         element.html(template).show();
@@ -38,6 +39,19 @@ export default appModule => {
           })
         });
       };
+      self.showEnterHours = function(){
+        $mdBottomSheet.show({
+          controller: function(){
+            this.user = self.candidate;
+            this.saveHours = function(){
+              console.log('Saving hours');
+            }
+          },
+          controllerAs: 'vm',
+          template: enterHoursTpl,
+          parent: angular.element(document.querySelector('#candidate_content'))
+        });
+      }
     }];
     return {
       restrict: 'E',

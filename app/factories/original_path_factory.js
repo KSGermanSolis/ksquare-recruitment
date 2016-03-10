@@ -3,7 +3,7 @@
  */
 
 export default appModule => {
-  appModule.factory('OriginalPathFactory', ['$window', function($window){
+  appModule.factory('OriginalPathFactory', ['$window', ($window) => {
     const key = 'original-path';
     let store = $window.localStorage;
 
