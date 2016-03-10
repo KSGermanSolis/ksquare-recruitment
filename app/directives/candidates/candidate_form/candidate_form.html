@@ -1,0 +1,60 @@
+<div class="candidate-form-component" layout="column">
+    <div layout="row" layout-align="space-between center" class="md-padding">
+        <h3>{{vm.formTitle}}</h3>
+        <md-button class="md-raised md-warn" ng-click="vm.cancel()">Cancel</md-button>
+    </div>
+    <md-divider></md-divider>
+    <form layout="row" layout-align="space-between center" class="md-padding">
+        <div flex="45">
+            <md-input-container class="md-block">
+                <label>Firstname</label>
+                <input ng-model="vm.candidate.firstName">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Lastname</label>
+                <input ng-model="vm.candidate.lastName">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Phone Number</label>
+                <input ng-model="vm.candidate.phoneNumber">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input ng-model="vm.candidate.email">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Client</label>
+                <input ng-model="vm.candidate.client">
+            </md-input-container>
+        </div>
+        <div flex="45">
+            <md-input-container class="md-block">
+                <label>Bill Rate</label>
+                <input ng-model="vm.candidate.billRate">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Pay Rate</label>
+                <input ng-model="vm.candidate.payRate">
+            </md-input-container>
+            <div layout="row" layout-align="space-between center">
+                <md-datepicker ng-model="vm.candidate.startDate"
+                               md-placeholder="Start Date"
+                               flex="45"></md-datepicker>
+                <md-datepicker ng-model="vm.candidate.endDate"
+                               md-placeholder="End Date"
+                               flex="45"></md-datepicker>
+            </div>
+            <md-input-container class="md-block">
+                <label>Recruiter</label>
+                <input ng-model="vm.candidate.recruiter">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Sales Person</label>
+                <input ng-model="vm.candidate.salesPerson">
+            </md-input-container>
+        </div>
+    </form>
+    <section layout="row" layout-sm="column" layout-align="end center" layout-wrap class="md-padding">
+        <md-button class="md-raised md-primary" ng-click="vm.save()">{{vm.candidate.id ? 'Save' : 'Create'}}</md-button>
+    </section>
+</div>

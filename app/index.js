@@ -27,3 +27,12 @@ directives(appModule);
 factories(appModule);
 services(appModule);
 appRoutes(appModule);
+
+Date.prototype.getFormattedString = function () {
+  var date = this,
+    day = date.getDate(),
+    month = date.getMonth() + 1,
+    year = date.getFullYear();
+
+  return `${month}/${day}/${year}`
+};

@@ -3,7 +3,9 @@
  */
 
 import userService from './user_service'
+import candidateService from './candidate_service'
 
 export default appModule => {
   userService(appModule);
+  candidateService(appModule);
 }

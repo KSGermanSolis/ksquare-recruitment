@@ -1,19 +1,24 @@
 <div class="candidates-view" layout="row">
     <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp" ng-show="ctrl.isUserLoggedIn">
         <div layout="row" layout-align="space-between center" class="md-padding">
-            <input type="text" placeholder="Search"  flex="65" class="search-candidate-input">
-            <md-button ng-click="vm.login()" flex="15" class="add-candidate-btn">Add</md-button>
+            <input type="text" placeholder="Search Candidates"  flex="65" class="search-candidate-input" ng-model="search">
+            <md-button ng-click="showAddCandidateForm()" flex="15" class="add-candidate-btn">Add</md-button>
         </div>
         <md-divider></md-divider>
         <md-list>
-            <md-list-item>
-                <md-button>
-                    Recruiter 1
-                </md-button>
+            <md-list-item ng-repeat="candidate in candidates | filter:candidatesFilter">
+                <md-button ng-click="selectCandidate(candidate)">{{candidate.firstName +' '+ candidate.lastName}}</md-button>
             </md-list-item>
         </md-list>
     </md-sidenav>
-    <md-content id="content" flex>
-
+    <md-content flex>
+        <candidate-form ng-show="currentView==='candidate_add_edit'"
+                        on-cancel="onCancel()"
+                        on-save="onSave(candidate)"
+                        candidate="candidate"></candidate-form>
+        <candidate-details ng-show="currentView==='candidate_details'"
+                           candidate="candidate"
+                           on-edit="onEdit()"
+                           on-delete="onDelete()"></candidate-details>
     </md-content>
 </div>

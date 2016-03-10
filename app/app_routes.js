@@ -17,7 +17,6 @@ export default appModule => {
     .when('/candidates', {
       templateUrl: 'views/candidates/candidates.html',
       controller: 'CandidatesCtrl',
-      controllerAs: 'ctrl',
       allowAnonymous: false
     })
     .when('/recruiters', {
