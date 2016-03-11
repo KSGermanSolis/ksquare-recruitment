@@ -26,11 +26,25 @@ export default appModule => {
       });
     }
 
+    /* Candidate Hours */
+    function getHours(candidateId){
+      return $http.get(`${BaseUrl}/api/candidates/${candidateId}/hours`).then((response) => {
+        return response.data;
+      });
+    }
+    function saveHours(candidateHours){
+      return $http.post(`${BaseUrl}/api/candidates/hours`, candidateHours).then((response) => {
+        return response.data;
+      });
+    }
+
     return {
       save,
       getAll,
       getById,
-      remove
+      remove,
+      getHours,
+      saveHours
     }
   }])
 }

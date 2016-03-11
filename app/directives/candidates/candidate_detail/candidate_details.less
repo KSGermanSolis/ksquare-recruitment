@@ -4,11 +4,7 @@
     padding: 0;
   }
   .md-button {
-    margin: 0 0 0 20px;
-
-    &.enter-hours-btn {
-      padding: 0 20px;
-    }
+    margin: 0;
   }
 
   .display-fields {
@@ -25,15 +21,26 @@
     thead {
       tr {
         th{
-          &:first-child {
-            width: 70px;
-          }
+          width: 8%;
+        }
+      }
+    }
+    tr {
+      td {
+          width: 8%;
+        > span {
+          width: 50px;
+          display: inline-block;
         }
       }
     }
 
     md-input-container {
       margin: 0;
+      max-width: 50px;
+      .md-errors-spacer {
+        min-height: 0;
+      }
     }
   }
 }

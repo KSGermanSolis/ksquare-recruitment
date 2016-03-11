@@ -2,14 +2,13 @@
     <div layout="row" layout-align="space-between center" class="md-padding">
         <h3>{{vm.candidate.firstName + ' ' + vm.candidate.lastName}}</h3>
         <div>
-            <md-button class="md-raised md-primary enter-hours-btn" ng-click="vm.showEnterHours()">Enter Hours</md-button>
-            <md-button class="md-raised md-primary" ng-click="vm.edit()">Edit</md-button>
-            <md-button class="md-raised md-warn" ng-click="vm.delete()">Delete</md-button>
+            <md-button class="md-primary enter-hours-btn" ng-click="vm.showEnterHours()">Manage Hours</md-button>
+            <md-button class="md-primary" ng-click="vm.edit()">Edit</md-button>
+            <md-button class="md-warn" ng-click="vm.delete()">Delete</md-button>
         </div>
     </div>
     <md-divider></md-divider>
     <div class="display-fields">
-        <!--<display-model model="{{vm.candidate}}"></display-model>-->
         <display-field key="Name" value="{{vm.candidate.firstName+' '+vm.candidate.lastName}}"></display-field>
         <display-field key="Phone Number" value="{{vm.candidate.phoneNumber}}"></display-field>
         <display-field key="Email" value="{{vm.candidate.email}}"></display-field>

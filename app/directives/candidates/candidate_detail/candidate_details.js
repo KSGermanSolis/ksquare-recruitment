@@ -42,9 +42,22 @@ export default appModule => {
       self.showEnterHours = function(){
         $mdBottomSheet.show({
           controller: function(){
-            this.user = self.candidate;
-            this.saveHours = function(){
-              console.log('Saving hours');
+            let vm = this;
+            vm.user = self.candidate;
+            vm.months = ['Year', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            Candidate.getHours(vm.user.id).then((userHours) => {
+              vm.userHours = userHours;
+            });
+            vm.saveHours = function(){
+              Candidate.saveHours(vm.userHours).then(function (message) {
+                console.log(message);
+                vm.closeEnterHours();
+              }, function(response){
+                console.log(response.data);
+              });
+            };
+            vm.closeEnterHours = function(){
+              $mdBottomSheet.hide();
             }
           },
           controllerAs: 'vm',

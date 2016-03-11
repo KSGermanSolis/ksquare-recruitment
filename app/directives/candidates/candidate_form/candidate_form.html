@@ -1,7 +1,7 @@
 <div class="candidate-form-component" layout="column">
     <div layout="row" layout-align="space-between center" class="md-padding">
         <h3>{{vm.formTitle}}</h3>
-        <md-button class="md-raised md-warn" ng-click="vm.cancel()">Cancel</md-button>
+        <md-button class="md-warn" ng-click="vm.cancel()">Cancel</md-button>
     </div>
     <md-divider></md-divider>
     <form layout="row" layout-align="space-between center" class="md-padding">
@@ -59,6 +59,6 @@
         </div>
     </form>
     <section layout="row" layout-sm="column" layout-align="end center" layout-wrap class="md-padding">
-        <md-button class="md-raised md-primary" ng-click="vm.save()">{{vm.candidate.id ? 'Save' : 'Create'}}</md-button>
+        <md-button class="md-primary" ng-click="vm.save()">{{vm.candidate.id ? 'Save' : 'Create'}}</md-button>
     </section>
 </div>
