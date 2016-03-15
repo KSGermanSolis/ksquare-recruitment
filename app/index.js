@@ -4,6 +4,8 @@
 import mainStyle from './index.less'
 import loginViewStyle from './views/login/login_view.less'
 import candidatesViewStyle from './views/candidates/candidates_view.less'
+import recruitersViewStyle from './views/recruiters/recruiters_view.less'
+import salesPersonViewStyle from './views/sales_persons/sales_persons_view.less'
 
 import angular from 'angular'
 import ngRouter from 'angular-route'

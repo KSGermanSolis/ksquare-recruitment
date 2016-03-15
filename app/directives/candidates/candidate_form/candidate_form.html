@@ -40,7 +40,7 @@
                 <label>Pay Rate</label>
                 <input ng-model="vm.candidate.payRate">
             </md-input-container>
-            <div layout="row" layout-align="space-between center">
+            <div layout="row" layout-align="space-between center" style="padding: 0 0 18px 0;">
                 <md-datepicker ng-model="vm.candidate.startDate"
                                md-placeholder="Start Date"
                                flex="45"></md-datepicker>
@@ -48,9 +48,15 @@
                                md-placeholder="End Date"
                                flex="45"></md-datepicker>
             </div>
+            <!--<md-input-container class="md-block">-->
+                <!--<label>Recruiter</label>-->
+                <!--<input ng-model="vm.candidate.recruiter">-->
+            <!--</md-input-container>-->
             <md-input-container class="md-block">
                 <label>Recruiter</label>
-                <input ng-model="vm.candidate.recruiter">
+                <md-select ng-model="vm.candidate.recruiterId" md-on-open="vm.loadRecruiters()" style="margin:0 0 24px 0;">
+                    <md-option ng-value="recruiter.id" ng-repeat="recruiter in vm.recruiters">{{recruiter.firstName + ' ' + recruiter.lastName}}</md-option>
+                </md-select>
             </md-input-container>
             <md-input-container class="md-block">
                 <label>Sales Person</label>

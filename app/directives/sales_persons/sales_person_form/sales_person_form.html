@@ -1,0 +1,35 @@
+<div layout="column" class="sales-person-form-component">
+    <div layout="row" layout-align="space-between center" class="md-padding">
+        <h3>{{vm.title}}</h3>
+        <md-button class="md-warn" ng-click="vm.cancel()">Cancel</md-button>
+    </div>
+    <md-divider></md-divider>
+    <form layout="row" layout-align="center center" class="md-padding">
+        <div flex="80">
+            <md-input-container class="md-block">
+                <label>Firstname</label>
+                <input ng-model="vm.salesPerson.firstName">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Lastname</label>
+                <input ng-model="vm.salesPerson.lastName">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input ng-model="vm.salesPerson.email">
+            </md-input-container>
+            <md-radio-group ng-model="vm.salesPerson.commissionType" layout="row">
+                <div style="margin:0 50px 0 0;"><label>Commission Type</label></div>
+                <md-radio-button value="percentage" class="md-primary">Percentage</md-radio-button>
+                <md-radio-button value="fixed" class="md-primary">Fixed</md-radio-button>
+            </md-radio-group>
+            <md-input-container class="md-block">
+                <label>Commission</label>
+                <input ng-model="vm.salesPerson.commission">
+            </md-input-container>
+        </div>
+    </form>
+    <section layout="row" layout-sm="column" layout-align="end center" layout-wrap class="md-padding">
+        <md-button class="md-primary" ng-click="vm.save()">{{vm.salesPerson.id ? 'Save' : 'Create'}}</md-button>
+    </section>
+</div>

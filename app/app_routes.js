@@ -21,6 +21,12 @@ export default appModule => {
     })
     .when('/recruiters', {
       templateUrl: 'views/recruiters/recruiters.html',
+      controller: 'RecruitersCtrl',
+      allowAnonymous: false
+    })
+    .when('/salespersons', {
+      templateUrl: 'views/sales_persons/sales_persons.html',
+      controller: 'SalesPersonsCtrl',
       allowAnonymous: false
     });
 

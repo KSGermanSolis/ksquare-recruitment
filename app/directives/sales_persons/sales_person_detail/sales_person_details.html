@@ -1,0 +1,16 @@
+<div class="recruiter-details-component" layout="column">
+    <div layout="row" layout-align="space-between center" class="md-padding">
+        <h3>{{vm.salesPerson.firstName + ' ' + vm.salesPerson.lastName}}</h3>
+        <div>
+            <md-button class="md-primary" ng-click="vm.edit()">Edit</md-button>
+            <md-button class="md-warn" ng-click="vm.delete()">Delete</md-button>
+        </div>
+    </div>
+    <md-divider></md-divider>
+    <div class="display-fields">
+        <display-field key="Name" value="{{vm.salesPerson.firstName+' '+ vm.salesPerson.lastName}}"></display-field>
+        <display-field key="Email" value="{{vm.salesPerson.email}}"></display-field>
+        <display-field key="Commission Type" value="{{vm.salesPerson.commissionType}}"></display-field>
+        <display-field key="Commission" value="{{vm.salesPerson.commission}}"></display-field>
+    </div>
+</div>

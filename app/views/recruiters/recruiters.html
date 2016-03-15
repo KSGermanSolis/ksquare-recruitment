@@ -1,1 +1,24 @@
-<div>Recruiters</div>
+<div class="recruiters-view" layout="row">
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+        <div layout="row" layout-align="space-between center" class="md-padding">
+            <input type="text" placeholder="Search Recruiters"  flex="65" class="search-input" ng-model="search">
+            <md-button ng-click="showAddRecruiterForm()" flex="15" class="add-recruiter-btn">Add</md-button>
+        </div>
+        <md-divider></md-divider>
+        <md-list>
+            <md-list-item ng-repeat="recruiter in recruiters | filter:recruitersFilter">
+                <md-button ng-click="selectRecruiter(recruiter)">{{recruiter.firstName +' '+ recruiter.lastName}}</md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <md-content flex>
+        <recruiter-form ng-show="currentView==='recruiter_add_edit'"
+                        on-cancel="onCancel()"
+                        on-save="onSave(recruiter)"
+                        recruiter="recruiter"></recruiter-form>
+        <recruiter-details ng-show="currentView==='recruiter_details'"
+                           recruiter="recruiter"
+                           on-edit="onEdit()"
+                           on-delete="onDelete()"></recruiter-details>
+    </md-content>
+</div>

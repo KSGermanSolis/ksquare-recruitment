@@ -18,7 +18,7 @@
         <display-field key="Pay Rate" value="{{vm.candidate.payRate}}"></display-field>
         <display-field key="Start Date" value="{{vm.candidate.startDate.getFormattedString()}}"></display-field>
         <display-field key="End Date" value="{{vm.candidate.endDate.getFormattedString()}}"></display-field>
-        <display-field key="Recruiter" value="{{vm.candidate.recruiter}}"></display-field>
+        <display-field key="Recruiter" value="{{vm.candidate.recruiter.firstName +' '+ vm.candidate.recruiter.lastName}}"></display-field>
         <display-field key="Sales Person" value="{{vm.candidate.salesPerson}}"></display-field>
     </div>
 </div>

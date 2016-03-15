@@ -3,7 +3,7 @@
  */
 
 export default appModule => {
-  appModule.controller('CandidatesCtrl', ['$scope', 'Candidate', function($scope, Candidate){
+  appModule.controller('CandidatesCtrl', ['$scope', 'Candidate', 'Recruiter', function($scope, Candidate, Recruiter){
     $scope.candidate = null;
     $scope.candidates = [];
     Candidate.getAll().then(function(candidates){
@@ -33,6 +33,11 @@ export default appModule => {
       $scope.selectCandidate(candidate);
     };
     $scope.selectCandidate = function(candidate){
+      //if(!candidate.recruiter){
+        Recruiter.getById(candidate.recruiterId).then(function(recruiter){
+          $scope.candidate.recruiter = recruiter;
+        });
+      //}
       $scope.candidate = candidate;
       $scope.currentView = 'candidate_details';
     };

@@ -1,0 +1,24 @@
+<div class="sales-persons-view" layout="row">
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+        <div layout="row" layout-align="space-between center" class="md-padding">
+            <input type="text" placeholder="Search Sales Persons"  flex="65" class="search-input" ng-model="search">
+            <md-button ng-click="showAddForm()" flex="15" class="add-btn">Add</md-button>
+        </div>
+        <md-divider></md-divider>
+        <md-list>
+            <md-list-item ng-repeat="user in users | filter:usersFilter">
+                <md-button ng-click="selectUser(user)">{{user.firstName +' '+ user.lastName}}</md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <md-content flex>
+        <sales-person-form ng-show="currentView==='user_add_edit'"
+                        on-cancel="onCancel()"
+                        on-save="onSave(user)"
+                        user="user"></sales-person-form>
+        <sales-person-details ng-show="currentView==='user_details'"
+                           user="user"
+                           on-edit="onEdit()"
+                           on-delete="onDelete()"></sales-person-details>
+    </md-content>
+</div>
